@@ -1,42 +1,42 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@mui/icons-material": "^5.5.1",
-    "@mui/material": "^5.5.2",
-    "@mui/styled-engine-sc": "^5.5.2",
-    "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "5.0.0",
-    "styled-components": "^5.3.5",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi generate tmp",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "gitHooks": {
+    "pre-commit": "lint-staged"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
     ]
+  },
+  "dependencies": {
+    "antd": "^4.19.3",
+    "enquire-js": "^0.2.1",
+    "rc-queue-anim": "^2.0.0",
+    "rc-scroll-anim": "^2.7.6",
+    "rc-tween-one": "^3.0.3",
+    "react": "17.x",
+    "react-dom": "17.x",
+    "umi": "^3.5.21"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "^3.5.21",
+    "lint-staged": "^10.0.7",
+    "prettier": "^2.2.0",
+    "typescript": "^4.1.2",
+    "yorkie": "^2.0.0"
   }
 }

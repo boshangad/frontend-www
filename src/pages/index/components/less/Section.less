@@ -1,15 +1,18 @@
-@content0: content0;
+@section: section;
 
-.@{content0}-wrapper {
-  min-height: 446px;
+.@{section}-wrapper {
   overflow: hidden;
 
-  .@{content0} {
+  .@{section} {
     height: 100%;
     padding: 64px 24px;
 
     > .title-wrapper {
       margin: 0 auto 48px;
+    }
+
+    > p {
+      text-align: center;
     }
 
     &-block {
@@ -45,11 +48,5 @@
         font-size: 24px;
       }
     }
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .@{content0}-wrapper {
-    min-height: 880px;
   }
 }

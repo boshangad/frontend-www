@@ -4,12 +4,12 @@ import { DownOutlined } from '@ant-design/icons';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 
-import './banner.less';
+import './less/banner.less';
 
 class Banner extends React.PureComponent {
   render() {
     return (
-      <div className="banner">
+      <section className="banner" {...this.props}>
         <QueueAnim
           key="QueueAnim"
           type={['bottom', 'top']}
@@ -42,7 +42,7 @@ class Banner extends React.PureComponent {
         >
           <DownOutlined />
         </TweenOne>
-      </div>
+      </section>
     );
   }
 }

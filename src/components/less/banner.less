@@ -1,15 +1,46 @@
-@banner0: banner0;
-.@{banner0} {
+@import '~@/global.less';
+
+@banner: banner;
+.@{banner} {
   // 如果在第一屏且导航位置为 relative, 一屏为 height: calc(~"100vh - 64px");
   width: 100%;
   height: 100vh;
   position: relative;
   text-align: center;
   border-color: #666;
-  background-image: url('https://zos.alipayobjects.com/rmsportal/gGlUMYGEIvjDOOw.jpg');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
+  &-wrapper,
+  .banner-anim {
+    height: 100%;
+  }
+  & .queue-anim-leaving {
+    position: relative !important;
+  }
+  .banner-user-elem {
+    height: 100%;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-size: cover;
+  }
+  .banner-user-elem .banner-user-title {
+    font-size: 22px;
+    top: 40%;
+  }
+  .banner-user-elem .banner-user-text {
+    top: 40%;
+  }
+
   & &-text-wrapper {
     display: inline-block;
     position: absolute;
@@ -68,10 +99,16 @@
     margin-left: -12px;
     color: @template-text-color-light;
   }
+  .banner-anim-thumb-default span {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.5);
+  }
 }
 
 @media screen and (max-width: 767px) {
-  .@{banner0} {
+  .@{banner} {
     background-attachment: inherit;
     & &-text-wrapper {
       width: 90%;

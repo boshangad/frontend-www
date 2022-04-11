@@ -6,7 +6,7 @@ import { Row, Col } from 'antd';
 import { getChildrenToRender, isImg } from '@/utils/utils';
 
 // 底部样式
-import './Footer.less';
+import './less/Footer.less';
 
 const sourceData = {
   className: 'home-page',
